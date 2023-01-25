@@ -19,7 +19,9 @@ $$\sigma_{ij} = \sigma_{ji}$$
 
 $$\sigma = \sigma_{ii}$$
 
-$$w_n = 1 - \sum_{i<n} w_i$$
+
+$$ w_n = 1 - \sum_{i<n} w_i $$
+
 
 $$\frac{\partial{}}{\partial{w_k}}, k < n$$
 
