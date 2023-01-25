@@ -24,8 +24,6 @@ $$\frac{\partial{}}{\partial{w_k}}, k < n$$
 
 $$\frac{\partial{w_n}}{\partial{w_k}} = -1$$
 
-<!-- $$= \underbrace{\sum_{i, j < n} w_i w_j \sigma_{ij}}_A + \underbrace{2 \sum_{j < n} w_j (1 - \sum_{i<n} w_i) \sigma_{jn}}_B + \underbrace{(1 - \sum_{i<n} w_i)^2 \sigma_{nn}}_C$$ -->
-
 $$\frac{1}{2} \cdot \frac{\partial{B}}{\partial{w_k}} = \sigma_{kn}\frac{\partial{}}{\partial{w_k}}(w_kw_n) + \sum_{k \ne j < n} w_j \sigma_{jn} \frac{\partial{w_n}}{\partial{w_k}}$$
 
 $$= \sigma_{kn} (w_n-w_k) - \sum_{k \ne j < n} w_j \sigma_{jn}$$
