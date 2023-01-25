@@ -16,6 +16,7 @@ $$= \sum_{j < n} w_j \sum_{i < n} w_i \sigma_{ji} + w_n \sum_{i < n} w_i \sigma_
 $$= \underbrace{\sum_{i, j < n} w_i w_j \sigma_{ij}}_A + \underbrace{2 \sum_{j < n} w_j w_n \sigma_{jn}}_B + \underbrace{w_n^2 \sigma_{nn}}_C$$
 
 $$\sigma_{ij} = \sigma_{ji}$$
+
 $$\sigma = \sigma_{ii}$$
 
 $$w_n = 1 - \sum_{i<n} w_i$$
