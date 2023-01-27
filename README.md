@@ -1,3 +1,17 @@
+# <b><p align="center">bettersleep ~ a simple and stable optimal portfolio</p></b>
+#### <p align="center">[1m1@2i2i.app](https://github.com/2i2i/whitepaper/blob/main/Notes.md#acknowledgement)</p>
+
+<br></br>
+## <p align="center">Abstract</p>
+<p align="center">This <a href="https://github.com/2i2i/whitepaper/blob/main/Notes.md#whitepaper">whitepaper</a> describes a method of creating an </p>
+<br></br>
+
+# <b>I. Definitions</b>
+
+
+
+<br></br>
+## Market
 # optimal_portfolio
 A simplification of portfolio optimization that leads to better results
 
@@ -46,3 +60,24 @@ $$\frac{1}{2} \cdot \frac{\partial{A}}{\partial{w_k}} = \sum_{i<n} w_i \sigma_{k
 $$\forall k<n: 0 = \frac{1}{2} \cdot  \frac{\partial{(w^T\cdot C \cdot w)}}{\partial{w_k}} =\frac{1}{2} \cdot \frac{\partial{(A+B+C)}}{\partial{w_k}}$$
 $$ = \sigma_{kn}-\sigma_{nn} + \sum_{i < n} w_i(\sigma_{nn}-\sigma_{in}-\sigma_{kn}+\sigma_{ki})$$
 
+$$\hat{b} = \begin{pmatrix} \sigma_{1n}-\sigma \\ \vdots \\ \sigma_{n-1,n}-\sigma \end{pmatrix}$$
+
+$$s_{ik} = \sigma-\sigma_{in}-\sigma_{kn}+\sigma_{ki} = s_{ki}$$
+
+$$s_{ii} = 2(\sigma - \sigma_{in})$$
+
+$$\hat{C} = C[1:end-1][1:end-1] = \begin{pmatrix} \sigma & \ldots &\sigma_{1,n-1} \\ \vdots & \ddots & \vdots \\ \sigma_{1,n-1} & \ldots &\sigma \end{pmatrix}$$
+
+$$C_n = \begin{pmatrix} \sigma_{1n} && \ldots && \sigma_{1n} \\ \vdots && \ddots && \vdots \\ \sigma_{n-1,n} && \dots && \sigma_{n-1,n} \\ \sigma && \ldots && \sigma\end{pmatrix}$$
+
+$$C_n + C_n^T$$
+
+$$\tilde{C} = \begin{pmatrix} 0 && \sigma_{12} && \sigma_{13} && \ldots && \sigma_{1,n-1} \\  && 0 && \sigma_{23} && \ldots && \sigma_{2,n-1} \\  &&  && \ddots && \ldots && \vdots \\ && \text{\huge0} && && 0 && \sigma_{n-1,n-1} \\ && && && && 0 \end{pmatrix}$$
+
+$$\hat{S} = \tilde{C} + \tilde{C}^T + \sigma \cdot (I + \mathbb{1}) - (C_n + C_n^T)$$
+
+$$\hat{w} = \begin{pmatrix} w_1 \\ \vdots \\ w_{n-1} \end{pmatrix}$$
+
+$$\hat{S} \hat{w} = \hat{b} \Leftrightarrow \hat{w}=\hat{S} \backslash \hat{b}$$
+
+Given $n$ assets
