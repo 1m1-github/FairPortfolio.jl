@@ -32,7 +32,7 @@ Now that we have well estimated covariances, equal variances and we ignore momen
 
 With the symmetric covariance matrix $C$
 
-$$C = \begin{pmatrix} \sigma & \ldots &\sigma_{1n} \\ \vdots & \ddots & \vdots \\ \sigma_{1n} & \ldots &\sigma \end{pmatrix}$$
+$$C = ```\begin{pmatrix} \sigma & \ldots &\sigma_{1n} \\ \vdots & \ddots & \vdots \\ \sigma_{1n} & \ldots &\sigma \end{pmatrix}```$$
 
 the total portfolio variance $V$ is
 
