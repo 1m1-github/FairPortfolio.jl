@@ -53,6 +53,7 @@ $$= \underbrace{\sum_{i, j < n} w_i w_j \sigma_{ij}}_A + \underbrace{2 \sum_{j <
 To find the $w_k$ that minimizes $V$, we will solve for
 
 $$\frac{\partial{V}}{\partial{w_k}} = 0$$
+
 for all $k<n$.
 
 This is equivalent (and slightly simpler) to solving
