@@ -86,7 +86,7 @@ $$= \sigma_{kn} - \sum_{i < n} w_i (\sigma_{in}+\sigma_{kn})$$
 
 For $C$, we get
 
-$$\frac{1}{2} \cdot \frac{\partial{C}}{\partial{w_k}} = -w_n\sigma_{nn} = -\sigma_{nn} + \sigma_{nn}\sum_{i<n} w_i$$
+$$\frac{1}{2} \cdot \frac{\partial{C}}{\partial{w_k}} = -w_n\sigma_{nn} = -\sigma_{nn} + \sigma_{nn}\sum_{i < n} w_i$$
 
 Putting it together, we get
 
