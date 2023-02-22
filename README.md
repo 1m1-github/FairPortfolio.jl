@@ -19,7 +19,7 @@ Third degree moments are referred to as skewness and fourth degree moments as ku
 <br></br>
 # <b>II. Homogeneous Variance</b>
 
-To get a stable portfolio, we first homogenize the variances of all assets
+To get a stable portfolio, we first homogenize the variances across all assets and time 
 
 $$\sigma_{ii} = \sigma$$
 
