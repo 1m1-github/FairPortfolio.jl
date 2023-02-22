@@ -31,6 +31,7 @@ An investor could choose any model to predict the variance of an asset for the f
 Now that we have well estimated covariances, equal variances and we ignore moments of degree 1 and degrees 3 and higher, we find the optimal portfolio by minimizing the total portfolio variance.
 
 With the symmetric covariance matrix $C$
+
 $$C = \begin{pmatrix} \sigma & \ldots &\sigma_{1n} \\ \vdots & \ddots & \vdots \\ \sigma_{1n} & \ldots &\sigma \end{pmatrix}$$
 
 the total portfolio variance $V$ is
