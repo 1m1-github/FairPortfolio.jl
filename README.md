@@ -36,13 +36,13 @@ $$C = ```\begin{pmatrix} \sigma & \ldots &\sigma_{1n} \\ \vdots & \ddots & \vdot
 
 the total portfolio variance $V$ is
 
-$$V = w^T\cdot C \cdot w = (w_1, \ldots, w_n) C \begin{pmatrix} w_1 \\ \vdots \\ w_n \end{pmatrix}$$
+$$V = w^T\cdot C \cdot w = (w_1 \ldots w_n) C ```\begin{pmatrix} w_1 \\ \vdots \\ w_n \end{pmatrix}```$$
 
 where $w$ are the weights of assets that we want to calculate.
 
 We simplify algebraicly
 
-$$V = w^T\cdot C \cdot w = (w_1, \ldots, w_n) \begin{pmatrix} \sigma_{11} & \ldots &\sigma_{n1} \\ \vdots & \ddots & \vdots \\ \sigma_{1n} & \ldots &\sigma_{nn} \end{pmatrix} \begin{pmatrix} w_1 \\ \vdots \\ w_n \end{pmatrix}$$
+$$V = w^T\cdot C \cdot w = (w_1 \ldots w_n) ```\begin{pmatrix} \sigma_{11} & \ldots &\sigma_{n1} \\ \vdots & \ddots & \vdots \\ \sigma_{1n} & \ldots &\sigma_{nn} \end{pmatrix}``` ```\begin{pmatrix} w_1 \\ \vdots \\ w_n \end{pmatrix}```$$
 
 $$= (\sum_{i < n} w_i \sigma_{1i} + w_n \sigma_{1n}, \ldots, \sum_{i < n} w_i \sigma_{ni} + w_n \sigma_{nn}) \begin{pmatrix} w_1 \\ \vdots \\ w_n \end{pmatrix}$$
 
