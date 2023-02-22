@@ -44,7 +44,7 @@ We simplify algebraicly
 
 $$V = w^T\cdot C \cdot w = (w_1 \ldots w_n) ```\begin{pmatrix} \sigma_{11} & \ldots &\sigma_{n1} \\ \vdots & \ddots & \vdots \\ \sigma_{1n} & \ldots &\sigma_{nn} \end{pmatrix}``` ```\begin{pmatrix} w_1 \\ \vdots \\ w_n \end{pmatrix}```$$
 
-$$= (\sum_{i < n} w_i \sigma_{1i} + w_n \sigma_{1n}, \ldots, \sum_{i < n} w_i \sigma_{ni} + w_n \sigma_{nn}) ```\begin{pmatrix} w_1 \\ \vdots \\ w_n \end{pmatrix}```$$
+$$= (\sum_{i < n} w_i \sigma_{1i} + w_n \sigma_{1n} \ldots \sum_{i < n} w_i \sigma_{ni} + w_n \sigma_{nn}) ```\begin{pmatrix} w_1 \\ \vdots \\ w_n \end{pmatrix}```$$
 
 $$= \sum_{j < n} w_j \sum_{i < n} w_i \sigma_{ji} + w_n \sum_{i < n} w_i \sigma_{n1} + \sum_j w_j w_n \sigma_{jn}$$
 
