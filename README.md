@@ -70,7 +70,7 @@ $$\frac{\partial{w_n}}{\partial{w_k}} = -1$$
 
 For $A$, we get
 
-$$\frac{1}{2} \cdot \frac{\partial{A}}{\partial{w_k}} = \sum_{i<n} w_i \sigma_{ki}$$
+$$\frac{1}{2} \cdot \frac{\partial{A}}{\partial{w_k}} = \sum_{i < n} w_i \sigma_{ki}$$
 
 For $B$, we get
 
@@ -78,11 +78,11 @@ $$\frac{1}{2} \cdot \frac{\partial{B}}{\partial{w_k}} = \sigma_{kn}\frac{\partia
 
 $$= \sigma_{kn} (w_n-w_k) - \sum_{k \ne j < n} w_j \sigma_{jn}$$
 
-$$= \sigma_{kn} - \sigma_{kn} w_k - \sigma_{kn}\sum_{i<n}w_i - \sum_{k \ne j < n} w_j \sigma_{jn}$$
+$$= \sigma_{kn} - \sigma_{kn} w_k - \sigma_{kn}\sum_{i < n}w_i - \sum_{k \ne j < n} w_j \sigma_{jn}$$
 
-$$= \sigma_{kn} - \sigma_{kn}\sum_{i<n}w_i - \sum_{j < n} w_j \sigma_{jn}$$
+$$= \sigma_{kn} - \sigma_{kn}\sum_{i < n}w_i - \sum_{j < n} w_j \sigma_{jn}$$
 
-$$= \sigma_{kn} - \sum_{i<n} w_i (\sigma_{in}+\sigma_{kn})$$
+$$= \sigma_{kn} - \sum_{i < n} w_i (\sigma_{in}+\sigma_{kn})$$
 
 For $C$, we get
 
