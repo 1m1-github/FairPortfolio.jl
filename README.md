@@ -84,23 +84,35 @@ $$0 = \frac{\partial{V}}{\partial{w_k}} \Leftrightarrow \hat{S} \hat{w} = \hat{b
 with
 $$\hat{w} = \begin{pmatrix} w_1 \\ \vdots \\ w_{n-1} \end{pmatrix}$$
 $$\hat{b} = \begin{pmatrix} \sigma_{1n}-\sigma \\ \vdots \\ \sigma_{n-1,n}-\sigma \end{pmatrix}$$
-$$\hat{S}=\text{matrix containing }s_{ik}$$
+and $\hat{S}$ the matrix containing $s_{ik}$ with
 $$s_{ik} = \sigma-\sigma_{in}-\sigma_{kn}+\sigma_{ki} = s_{ki}$$
 $$s_{ii} = 2(\sigma - \sigma_{in})$$
 
 We can break up $\hat{S}$ as follows
 $$\hat{S} = \tilde{C} + \tilde{C}^T + \sigma \cdot (I + \mathbb{1}) - (C_n + C_n^T)$$
 
-with
-$$\hat{C} = C[1:end-1][1:end-1] = \begin{pmatrix} \sigma & \ldots &\sigma_{1,n-1} \\ \vdots & \ddots & \vdots \\ \sigma_{1,n-1} & \ldots &\sigma \end{pmatrix}$$
-
-$$C_n = \begin{pmatrix} \sigma_{1n} && \ldots && \sigma_{1n} \\ \vdots && \ddots && \vdots \\ \sigma_{n-1,n} && \dots && \sigma_{n-1,n} \\ \sigma && \ldots && \sigma\end{pmatrix}$$
-
+with $\tilde{C}$ the upper triangular covariance matrix
 $$\tilde{C} = \begin{pmatrix} 0 && \sigma_{12} && \sigma_{13} && \ldots && \sigma_{1,n-1} \\  && 0 && \sigma_{23} && \ldots && \sigma_{2,n-1} \\  &&  && \ddots && \ldots && \vdots \\ && \text{\huge0} && && 0 && \sigma_{n-1,n-1} \\ && && && && 0 \end{pmatrix}$$
 
+$C_n$ the row repeating matrix
+$$C_n = \begin{pmatrix} \sigma_{1n} && \ldots && \sigma_{1n} \\ \vdots && \ddots && \vdots \\ \sigma_{n-1,n} && \dots && \sigma_{n-1,n} \\ \sigma && \ldots && \sigma\end{pmatrix}$$
 
+$I$ the identity matrix
+$$I = \begin{pmatrix} 1 && && \text{\large0}\\ && \ddots \\ \text{\large0} && && 1\end{pmatrix}$$
 
+and $\mathbb{1}$ the constant 1 matrix
+$$\mathbb{1} = \begin{pmatrix} 1 && \ldots && 1 \\ \vdots && \ddots && \vdots \\ 1 && \ldots && 1\end{pmatrix}$$
 
+Now we are left with solving a linear equation system
 $$\hat{S} \hat{w} = \hat{b} \Leftrightarrow \hat{w}=\hat{S} \backslash \hat{b}$$
 
-Given $n$ assets
+which gives us our optimal weights $w$.
+
+<br></br>
+# <b>IV. Conslusion</b>
+
+Separating the task of optimising the portfolio from homogenizing the variance of each asset across time and the different assets enables a significantly more stable portfolio. Using shrinkage to estimate the covariances also plays helps this stability.
+
+Reducing the optimisation dimension helps further.
+
+The described model was found to perform significantly better than other tested models in 2012. This data is not provided and is left as an excercise for the interested reader.
