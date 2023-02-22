@@ -62,7 +62,7 @@ $$0 = \frac{1}{2} \cdot \frac{\partial{V}}{\partial{w_k}}= \frac{1}{2} \cdot \fr
 
 Also, we know that all the asset weights sum to 100%, i.e. we can reduce the problem by 1 dimension by realising
 
-$$ w_n = 1 - \sum_{i<n} w_i $$
+$$ w_n = 1 - \sum_{i < n} w_i $$
 
 which also means
 
