@@ -12,7 +12,7 @@ We assume that we have chosen a list of $n$ assets that we want to invest into. 
 
 The distribution of future returns of any asset consists of <a href=https://en.wikipedia.org/wiki/Moment_(mathematics)>*moment*s</a> of increasing degrees. The first degree *moment* is the expected value and is the hardest to predict. An investor should only choose assets that are believed to have positive first *moment*.
 
-The second degree *moment*s are the covariances between the assets, $\sigma_{ij}$, including the variances of each asset $\sigma_{ii}$. These covariances should be estimated by employing <a>shrinkage</a>.
+The second degree *moment*s are the covariances between the assets, $\sigma_{ij}$, including the variances of each asset $\sigma_{ii}$. These covariances should be estimated by employing <a href=https://en.wikipedia.org/wiki/Shrinkage_(statistics)>shrinkage</a>.
 
 Third degree moments are referred to as skewness and fourth degree moments as kurtosis. However, moments of degree 3 and higher have very large errors in measurement and hence are completely ignored in this method. This is because financial data is highly noisy.
 
@@ -23,7 +23,7 @@ To get a stable portfolio, we first homogenize the variances of all assets
 
 $$\sigma_{ii} = \sigma$$
 
-An investor could choose any model to predict the variance of an asset for the following time period and pre-scale the asset such that all assets have approx. the same variance (or volatility) over any time period. One simple model to achieve that is described <a>here</a>.
+An investor could choose any model to predict the variance of an asset for the following time period and pre-scale the asset such that all assets have approx. the same variance (or volatility) over any time period. One simple model to achieve that is to take the rolling window average variance.
 
 <br></br>
 # <b>III. Minimal Variance Portfolio</b>
@@ -102,6 +102,7 @@ with
 $$\hat{w} = \begin{pmatrix} w_1 \\ \vdots \\ w_{n-1} \end{pmatrix}$$
 
 $$\hat{b} = \begin{pmatrix} \sigma_{1n}-\sigma \\ \vdots \\ \sigma_{n-1,n}-\sigma \end{pmatrix}$$
+
 and $\hat{S}$ the matrix containing $s_{ik}$ with
 
 $$s_{ik} = \sigma-\sigma_{in}-\sigma_{kn}+\sigma_{ki} = s_{ki}$$
