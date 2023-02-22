@@ -44,7 +44,7 @@ We simplify algebraicly
 
 $$V = w^T\cdot C \cdot w = (w_1 \ldots w_n) ```\begin{pmatrix} \sigma_{11} & \ldots &\sigma_{n1} \\ \vdots & \ddots & \vdots \\ \sigma_{1n} & \ldots &\sigma_{nn} \end{pmatrix}``` ```\begin{pmatrix} w_1 \\ \vdots \\ w_n \end{pmatrix}```$$
 
-$$= (\sum_{i < n} w_i \sigma_{1i} + w_n \sigma_{1n}, \ldots, \sum_{i < n} w_i \sigma_{ni} + w_n \sigma_{nn}) \begin{pmatrix} w_1 \\ \vdots \\ w_n \end{pmatrix}$$
+$$= (\sum_{i < n} w_i \sigma_{1i} + w_n \sigma_{1n}, \ldots, \sum_{i < n} w_i \sigma_{ni} + w_n \sigma_{nn}) ```\begin{pmatrix} w_1 \\ \vdots \\ w_n \end{pmatrix}```$$
 
 $$= \sum_{j < n} w_j \sum_{i < n} w_i \sigma_{ji} + w_n \sum_{i < n} w_i \sigma_{n1} + \sum_j w_j w_n \sigma_{jn}$$
 
@@ -99,9 +99,9 @@ We can put previous formula into matrix form as follows
 $$0 = \frac{\partial{V}}{\partial{w_k}} \Leftrightarrow \hat{S} \hat{w} = \hat{b}$$
 with
 
-$$\hat{w} = \begin{pmatrix} w_1 \\ \vdots \\ w_{n-1} \end{pmatrix}$$
+$$\hat{w} = ```\begin{pmatrix} w_1 \\ \vdots \\ w_{n-1} \end{pmatrix}```$$
 
-$$\hat{b} = \begin{pmatrix} \sigma_{1n}-\sigma \\ \vdots \\ \sigma_{n-1,n}-\sigma \end{pmatrix}$$
+$$\hat{b} = ```\begin{pmatrix} \sigma_{1n}-\sigma \\ \vdots \\ \sigma_{n-1,n}-\sigma \end{pmatrix}```$$
 
 and $\hat{S}$ the matrix containing $s_{ik}$ with
 
@@ -115,19 +115,19 @@ $$\hat{S} = \tilde{C} + \tilde{C}^T + \sigma \cdot (I + \mathbb{1}) - (C_n + C_n
 
 with $\tilde{C}$ the upper triangular covariance matrix
 
-$$\tilde{C} = \begin{pmatrix} 0 && \sigma_{12} && \sigma_{13} && \ldots && \sigma_{1,n-1} \\  && 0 && \sigma_{23} && \ldots && \sigma_{2,n-1} \\  &&  && \ddots && \ldots && \vdots \\ && \text{\huge0} && && 0 && \sigma_{n-1,n-1} \\ && && && && 0 \end{pmatrix}$$
+$$\tilde{C} = ```\begin{pmatrix} 0 && \sigma_{12} && \sigma_{13} && \ldots && \sigma_{1,n-1} \\  && 0 && \sigma_{23} && \ldots && \sigma_{2,n-1} \\  &&  && \ddots && \ldots && \vdots \\ && \text{\huge0} && && 0 && \sigma_{n-1,n-1} \\ && && && && 0 \end{pmatrix}```$$
 
 $C_n$ the row repeating matrix
 
-$$C_n = \begin{pmatrix} \sigma_{1n} && \ldots && \sigma_{1n} \\ \vdots && \ddots && \vdots \\ \sigma_{n-1,n} && \dots && \sigma_{n-1,n} \\ \sigma && \ldots && \sigma\end{pmatrix}$$
+$$C_n = ```\begin{pmatrix} \sigma_{1n} && \ldots && \sigma_{1n} \\ \vdots && \ddots && \vdots \\ \sigma_{n-1,n} && \dots && \sigma_{n-1,n} \\ \sigma && \ldots && \sigma\end{pmatrix}```$$
 
 $I$ the identity matrix
 
-$$I = \begin{pmatrix} 1 && && \text{\large0}\\ && \ddots \\ \text{\large0} && && 1\end{pmatrix}$$
+$$I = ```\begin{pmatrix} 1 && && \text{\large0}\\ && \ddots \\ \text{\large0} && && 1\end{pmatrix}```$$
 
 and $\mathbb{1}$ the constant 1 matrix
 
-$$\mathbb{1} = \begin{pmatrix} 1 && \ldots && 1 \\ \vdots && \ddots && \vdots \\ 1 && \ldots && 1\end{pmatrix}$$
+$$\mathbb{1} = ```\begin{pmatrix} 1 && \ldots && 1 \\ \vdots && \ddots && \vdots \\ 1 && \ldots && 1\end{pmatrix}```$$
 
 Now we are left with solving a linear equation system
 
