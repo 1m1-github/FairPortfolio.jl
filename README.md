@@ -54,7 +54,7 @@ To find the $w_k$ that minimizes $V$, we will solve for
 
 $$\frac{\partial{V}}{\partial{w_k}} = 0$$
 
-for all $k<n$.
+for all $k < n$.
 
 This is equivalent (and slightly simpler) to solving
 
