@@ -1,5 +1,5 @@
-# <b><p align="center">sleepbetter ~ a simple and stable optimal portfolio</p></b>
-#### <p align="center">[email@1m1.io](https://github.com/2i2i/whitepaper/blob/main/Notes.md#acknowledgement)</p>
+# <b><p align="center">FairPortfolio ~ a simple and stable optimal portfolio</p></b>
+#### <p align="center">[email@1m1.io]</p>
 
 <br></br>
 ## <p align="center">Abstract</p>
