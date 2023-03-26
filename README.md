@@ -3,7 +3,7 @@
 
 <br></br>
 ## <p align="center">Abstract</p>
-<p align="center">This <a href="https://github.com/2i2i/whitepaper/blob/main/Notes.md#whitepaper">whitepaper</a> describes a method of creating an stable, optimal portfolio based on arbitrary list of assets. The model was practically tested vs other existing models and resulted in significantly better results, though the test data is not provided here. The result is achieved via simplications of multiple types.</p>
+<p align="center">This <a href="https://github.com/2i2i/whitepaper/blob/main/Notes.md#whitepaper">whitepaper</a> describes a method of creating an stable, optimal portfolio based on arbitrary list of assets. The model was practically tested vs other existing models and resulted in significantly better results (the test data is to be provided later or left as an exercise to the interested). The result is achieved via simplications of multiple types.</p>
 <br></br>
 
 # <b>I. Introduction</b>
@@ -142,4 +142,4 @@ Separating the task of optimising the portfolio from homogenizing the variance o
 
 Reducing the optimisation dimension helps further.
 
-The described model was found to perform significantly better than other tested models in 2012. This data is not provided and is left as an excercise for the interested reader.
+The described model was found to perform significantly better than other tested models in 2012. This data will be provided at some point and is left as an excercise for the interested reader until then.
