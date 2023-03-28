@@ -29,33 +29,30 @@ function optimize(C)
  if n == 1 return [1.0] end
 
  σ, σ_in, σ_kn, σ_ki = separate_cov_matrix(C)
- @show σ, σ_in, σ_kn, σ_ki
+#  @show σ, σ_in, σ_kn, σ_ki
  Ŝ = σ .- σ_in .- σ_kn .+ σ_ki
- @show Ŝ
-#  Ŝ = C[1:end-1, 1:end-1] .+ C[end, end] .- C[1:end-1, end] .- C[end, 1:end-1]'
-#  b̂ = C[end, end] .- C[1:end-1, end]
-#  b̂ = σ_in .- σ
+#  @show Ŝ
  b̂ = σ .- σ_in
- @show b̂
+#  @show b̂
 
  # solve linear equations
  ŵ = Ŝ \ b̂
- @show ŵ
+#  @show ŵ
 
  # add nth dimension
  push!(ŵ, 1.0 - sum(ŵ))
- @show "add nth dimension", ŵ
+#  @show "add nth dimension", ŵ
 
  # truncate
  for i in 1:n-1
   0 ≤ ŵ[i] && continue
   ŵ[i] = 0 
  end
- @show "truncate", ŵ
+#  @show "truncate", ŵ
 
  # normalize
  ŵ = ŵ ./ sum(ŵ)
- @show "normalize", ŵ
+#  @show "normalize", ŵ
 
  # code to check whether truncation is optimal
  # for i = 1:size(Index,1)
