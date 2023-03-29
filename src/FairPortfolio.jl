@@ -4,15 +4,6 @@ module FairPortfolio
 
 export optimize
 
-function separate_cov_matrix(C)
-    σ = C[end, end]
-    σ_in = C[1:end-1, end]
-    σ_kn = C[end, 1:end-1]'
-    σ_ki = C[1:end-1, 1:end-1]
-
-    σ, σ_in, σ_kn, σ_ki
-end
-
 # important note
 # this code is not providing a method to get a constant diagonal covariance matrix
 # follow these steps to get one
@@ -63,6 +54,15 @@ function optimize(C)
 
  ŵ
 
+end
+
+function separate_cov_matrix(C)
+    σ = C[end, end]
+    σ_in = C[1:end-1, end]
+    σ_kn = C[end, 1:end-1]'
+    σ_ki = C[1:end-1, 1:end-1]
+
+    σ, σ_in, σ_kn, σ_ki
 end
 
 end
