@@ -10,6 +10,6 @@ export optimize
 # 3. calculate a running variance for each asset
 # 4. rescale each asset in each time period (without looking forward) to have an approx homogeneous variance across assets and time
 
-include("optimize.jl")
+# include("optimize.jl")
 
 end
