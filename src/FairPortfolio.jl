@@ -59,6 +59,7 @@ end
 function separate_cov_matrix(C)
     σ = C[end, end]
     σ_in = C[1:end-1, end]
+    
     σ_kn = C[end, 1:end-1]'
     σ_ki = C[1:end-1, 1:end-1]
 
