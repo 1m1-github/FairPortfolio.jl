@@ -101,7 +101,7 @@ with
 
 $$\hat{w} = ```\begin{pmatrix} w_1 \\ \vdots \\ w_{n-1} \end{pmatrix}```$$
 
-$$\hat{b} = ```\begin{pmatrix} \sigma_{1n}-\sigma \\ \vdots \\ \sigma_{n-1,n}-\sigma \end{pmatrix}```$$
+$$\hat{b} = ```\begin{pmatrix} \sigma-\sigma_{1n} \\ \vdots \\ \sigma-\sigma_{n-1,n} \end{pmatrix}```$$
 
 and $\hat{S}$ the matrix containing $s_{ik}$ with
 
