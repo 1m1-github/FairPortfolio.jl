@@ -5,16 +5,16 @@ User friendly results.
 """
 function explain(weights, running_var_homogenizer, prices_matrix)
     cross_risk_weights = weights
-    println("weights based on cross-risk: ", join(cross_risk_weights, ','))
+    println("weights based on cross-risk:\n", join(cross_risk_weights, ','), "\n")
     
     own_risk_weights = running_var_homogenizer[end, :]
-    println("weights based on own-risk to get 0.01 : ", join(own_risk_weights, ','))
+    println("weights based on own-risk to get 0.01 variance per time period (scale accordingly):\n", join(own_risk_weights, ','), "\n")
 
     both_weights = own_risk_weights .* cross_risk_weights
-    println("weights based on both risks: ", join(both_weights, ','))
+    println("weights based on both risks: ", join(both_weights, ','), "\n")
 
     shares = both_weights ./ prices_matrix[end, :]
-    println("shares based on both risks and prices: ", join(shares, ','))
+    println("shares based on both risks and prices: ", join(shares, ','), "\n")
 end
 
 """
