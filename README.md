@@ -26,15 +26,15 @@ weights based on combined risks: 0.0763153852217579,0.08092572524435526,0.063286
 shares based on both risks and prices: 2.721552378761487e-6,4.513655979086473e-5,0.8497999937377919
 ```
 
-The first line describes the optimal weights considering only cross-risks (covariances) of the assets.
+- The first line describes the optimal weights considering only cross-risks (covariances) of the assets.
 
-The second line are the weights to have homogeneous own-risks (variances). If the input prices were e.g. per day, then these weights are to get a yearly standard deviation of 0.1.
+- The second line are the weights to have homogeneous own-risks (variances). If the input prices were e.g. per day, then these weights are to get a yearly standard deviation of 0.1.
 
-The third line is a multiplication of the first two lines. This is the final weighting.
+- The third line is a multiplication of the first two lines. This is the final weighting.
 
-The fourth line is the number of shares you should hold per 1 ccy of funds.
+- The fourth line is the number of shares you should hold per 1 ccy of funds.
 
-The above output is from the `example/crypto.jl` and tells us to hold approx 0.0000027 BTC, 0.000045 ETH, 0.85 DOGE in our portfolio to minimize our risk and have 10% annualized standard deviation (volatility) per 1 USD investment, given current data.
+>The above output is from the `example/crypto.jl` and tells us to hold approx 0.0000027 BTC, 0.000045 ETH, 0.85 DOGE in our portfolio to minimize our risk and have 10% annualized standard deviation (volatility) per 1 USD investment, given current data.
 
 <br></br>
 ## <p align="center">Abstract</p>
