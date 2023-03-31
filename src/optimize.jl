@@ -1,10 +1,10 @@
 include("utils.jl")
 include("covariance.jl")
 
-const VAR_WINDOW = 100
-const TARGET_VARIANCE=0.01
-const MAX_VARIANCE=36
-const SHRINKAGE_FACTOR = 0.1
+const VAR_WINDOW = 100 # how many data points to calculate variance
+const TARGET_VARIANCE = (0.1/16)^2 # 10% standard deviation per annum if periods were daily; actually, it is just an arbitrary constant
+const MAX_VARIANCE = 36
+const SHRINKAGE_FACTOR = 0.1 # empirically found to work well
 
 """
     optimize(prices...)
@@ -25,9 +25,20 @@ function optimize(prices...)
     standard_covariance = cov(norm_dret[2 + VAR_WINDOW:end, :])
     shrunk_covariance = shrink(standard_covariance)
     covariance = create_constant_diagonals!(shrunk_covariance)
-    w = optimize(covariance)
-    explain(w, running_var_homogenizer, prices_matrix)
-    w
+    
+    cross_risk_weights = optimize(covariance)
+    own_risk_weights = running_var_homogenizer[end, :]
+    combined_weights = own_risk_weights .* cross_risk_weights
+    shares = combined_weights ./ prices_matrix[end, :]
+
+    explain(cross_risk_weights, own_risk_weights, combined_weights, shares)
+    
+    Dict(
+        :cross_risk_weights => cross_risk_weights,
+        :own_risk_weights => own_risk_weights,
+        :combined_weights => combined_weights,
+        :shares => shares,
+    )
 end
 
 """

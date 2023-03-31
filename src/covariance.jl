@@ -108,6 +108,6 @@ Good data from 1 rows after input
 """
 function calc_norm_dret(dret::Matrix, running_var_homogenizer::Matrix)
     norm_dret = similar(dret)
-    norm_dret[2:end, :] = dret[1:end-1, :].* running_var_homogenizer[1:end-1, :]
+    norm_dret[2:end, :] = dret[1:end-1, :] .* running_var_homogenizer[1:end-1, :]
     norm_dret
 end
