@@ -1,6 +1,11 @@
 include("utils.jl")
 include("covariance.jl")
 
+const VAR_WINDOW = 100
+const TARGET_VARIANCE=0.01
+const MAX_VARIANCE=36
+const SHRINKAGE_FACTOR = 0.1
+
 """
     optimize(prices...)
 
@@ -45,14 +50,14 @@ function optimize(C::Matrix)
     # solve linear equations
     ŵ = Ŝ \ b̂
    
-    # add nth dimension
-    push!(ŵ, 1.0 - sum(ŵ))
-   
     # truncate
     for i in 1:n-1
-     0 ≤ ŵ[i] && continue
-     ŵ[i] = 0 
+        0 ≤ ŵ[i] && continue
+        ŵ[i] = 0 
     end
+
+    # add nth dimension
+    push!(ŵ, 1.0 - sum(ŵ))
    
     # normalize
     ŵ = ŵ ./ sum(ŵ)

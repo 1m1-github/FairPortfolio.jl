@@ -17,7 +17,7 @@ function apply_f_from_2nd_row(prices::Matrix, f::Function, top_row_value)
     result = similar(prices)
     result[1, :] .= top_row_value # first time returns unknown, set to avoid NaN
     for rix in 2:nrows, cix in 1:nassets
-        result[rix, cix] = f(asset_prices[rix, cix], asset_prices[rix - 1, cix])
+        result[rix, cix] = f(prices[rix - 1, cix], prices[rix, cix])
     end
     result # first row contains no data
 end
@@ -52,7 +52,7 @@ calc_new_variance(prev_point, new_point, prev_mean, new_mean, prev_mod_var, wind
 Output: Matrix of running variances with VAR_WINDOW.
 Good data from 1+VAR_WINDOW ≤ nrows
 """
-function calc_running_variance(lnret::Matrix, VAR_WINDOW=100)
+function calc_running_variance(lnret::Matrix)
     (nrows, nassets) = size(lnret)
     result = similar(lnret) # during loop contains variance*time
 
@@ -85,7 +85,12 @@ end
 Given running variance, calculates the homogenizing factor required to have a stable variance across assets and time (heteroskadasticity -> homoskadasticity).
 Good data same as input.
 """
-calc_running_homogenizer(running_variance::Matrix, VAR_WINDOW=1, TARGET_VARIANCE=0.01, MAX_VARIANCE=36) = sqrt.(min.(MAX_VARIANCE, TARGET_VARIANCE ./ running_variance))
+function calc_running_homogenizer(running_variance::Matrix)
+    homogenous_variance_factor = TARGET_VARIANCE ./ running_variance
+    truncated_homogenous_variance_factor = min.(MAX_VARIANCE, homogenous_variance_factor)
+    truncated_homogenous_variance_factor[1+VAR_WINDOW:end, :] = sqrt.(truncated_homogenous_variance_factor[1+VAR_WINDOW:end, :])
+    truncated_homogenous_variance_factor
+end
 
 """
     shrink(C)
@@ -93,7 +98,7 @@ calc_running_homogenizer(running_variance::Matrix, VAR_WINDOW=1, TARGET_VARIANCE
 Statistical Shrinkage stabilizes the covariance matrix C
 https://en.wikipedia.org/wiki/Shrinkage_(statistics)
 """
-shrink(C::Matrix, SHRINKAGE_FACTOR = 0.1) = SHRINKAGE_FACTOR * C + (1.0 - SHRINKAGE_FACTOR)diagm(diag(C))
+shrink(C::Matrix) = SHRINKAGE_FACTOR * C + (1.0 - SHRINKAGE_FACTOR)diagm(diag(C))
 
 """
     calc_norm_dret(dret::Matrix, running_var_homogenizer::Matrix)

@@ -4,10 +4,13 @@
 User friendly results.
 """
 function explain(weights, running_var_homogenizer, prices_matrix)
-    println("weights based on cross-risk: ", join(weights, ','))
-    println("weights based on own-risk: ", join(running_var_homogenizer, ','))
+    cross_risk_weights = weights
+    println("weights based on cross-risk: ", join(cross_risk_weights, ','))
+    
+    own_risk_weights = running_var_homogenizer[end, :]
+    println("weights based on own-risk to get 0.01 : ", join(own_risk_weights, ','))
 
-    both_weights = running_var_homogenizer[end, :] .* weights
+    both_weights = own_risk_weights .* cross_risk_weights
     println("weights based on both risks: ", join(both_weights, ','))
 
     shares = both_weights ./ prices_matrix[end, :]
@@ -32,8 +35,6 @@ function tuple_to_matrix(prices...)
     end
     m
 end
-tuple_to_matrix(prices[1], prices[2])
-tuple_to_matrix(prices)
 
 """
     create_constant_diagonals!(C)

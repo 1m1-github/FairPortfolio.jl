@@ -1,11 +1,9 @@
 module FairPortfolio
 
-# https://github.com/1m1-github/FairPortfolio.jl/blob/main/README.md [working version]
-
 export optimize
 
 """
-This package implements the theory presented in the FairPortfolio white paper.
+This package implements the theory presented in the FairPortfolio white paper (https://github.com/1m1-github/FairPortfolio.jl/blob/main/README.md [working version]).
 It is a portfolio optimization algorithm.
 
 Given nassets of assets, with prices... being a tuple of prices vectors, one per asset.
@@ -19,7 +17,7 @@ The algorithm provides a stable, optimized portfolio based on the following main
 5. Minimize our risk (covariance) using the following ideas
 6. Eliminate one dimension due to the restriction that all optimal weights sum to 1.
 7. Homogenize the variance part of the covariance across all assets and time (without looking forward in time).
-8. Solve analytically the reduced and simplified covariance matrix.
+8. Solve analytically the reduced and simplified (constant diagonal) covariance matrix.
 
 Before steps 6+7, we would have had, nassets^2/2 variables, after we reduce to ca. (nassets-2)^2/2 variables, making the optimization more stable.
 
