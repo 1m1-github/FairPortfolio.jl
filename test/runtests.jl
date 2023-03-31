@@ -1,8 +1,11 @@
 using Test, Random, FairPortfolio
 
 ## for n=2, always expect w[i]=1/2
-C = [0.01 0.02; 0.02 0.01]
-C = [1//100 2//100; 2//100 1//100]
+"""
+
+"""
+v = rand()*0.01
+C = [v rand()*0.01; rand()*0.01 v]
 w = optimize(C)
 # @show w
 @test w[1] == w[2] == 1//2
@@ -26,4 +29,14 @@ for _ in 1:10 # random tests
     @test length(w) == n
     # @show sum(w)
     @test round(sum(w)) == 1.0
+end
+
+function create_random_data(nrows = 1000, nassets = 3)
+    asset_dret = randn(nrows-1, nassets)*0.2
+    asset_prices = Matrix{Float64}(undef, nrows, nassets)
+    asset_prices[1, :] = rand(nassets)*10
+    for rix in 2:nrows, cix in 1:nassets
+        asset_prices[rix, cix] = asset_prices[rix - 1, cix] * (1 + asset_dret[rix - 1, cix])
+    end
+    asset_prices
 end
