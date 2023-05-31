@@ -2,6 +2,11 @@
 #### <p align="center">[email@1m1.io]</p>
 
 <br></br>
+## <p align="center">Publication</p>
+This pkg has been published as a julia library, available here: https://github.com/JuliaRegistries/General/tree/master/F/FairPortfolio  
+This should also allow users to `add` the pkg in a julia runtime.
+
+<br></br>
 ## <p align="center">Usage</p>
 
 Choose n assets which you believe are going to increase in value over the long term.
