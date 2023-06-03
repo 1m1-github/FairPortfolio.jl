@@ -1,3 +1,7 @@
+// todo
+// add .jl ref
+// add simplications
+
 // typst compile whitepaper/FairPortfolio.typ whitepaper/FairPortfolio.pdf
 #import "template.typ": *
 #show: ams-article.with(
