@@ -92,7 +92,7 @@
   )
 
   // Configure headings.
-  set heading(numbering: "1.")
+  // set heading(numbering: "1.")
   show heading: it => {
     // Create the heading numbering.
     let number = if it.numbering != none {
@@ -132,7 +132,7 @@
 
   // Configure citation and bibliography styles.
   set cite(style: "numerical", brackets: true)
-  set bibliography(style: "apa", title: "References")
+  set bibliography(style: "apa", title: [*References*])
 
   show figure: it => {
     show: pad.with(x: 23pt)
