@@ -45,7 +45,7 @@ The 1st moment is the expected return and is the hardest to predict. An investor
 \ \
 The 2nd moments are the #link(<stable-covariances>)[covariances] between the assets, $sigma_(i j)$, including the variances of each asset $sigma_(i i)$.
 \ \
-Moments of degree 3-and-higher have ever larger relative errors of measurement due to financial data being highly noisy.
+Moments of degree 3-and-  higher have ever larger relative errors of measurement due to financial data being highly noisy.
 \ \
 For numerical and qualitative stability, we should not include high error parameters in our optimization.
 This leaves us only with 2nd moments.
@@ -165,7 +165,9 @@ This method was tested practically on multiple common trading strategies (e.g. t
 \ \
 *stable covariance* <stable-covariances>
 To get a stable covariance matrix, one should use returns over multiple time periods (e.g. if daily data is available, use 10 day rolling returns).
-Additionally, use #link("https://en.wikipedia.org/wiki/Shrinkage_(statistics)")[shrinkage] to stabilize the covariance (e.g. a shrinkage factor of 0.1 has worked well in the author's experience).
+Additionally, use #link("https://en.wikipedia.org/wiki/Shrinkage_(statistics)")[shrinkage] to stabilize the covariance:
+$ C_("shrunk") = alpha dot.op C + (1-alpha) dot.op "diagm"("diag"(C)) $
+where $"diagm"("diag"(C))$ is the matrix with zeros off-diagonal and the same diagonal as $C$. $alpha=0.1$ has worked well in the author's experience.
 \ \
 *performance* <performance>
 Performace of investment strategies is, in the author's experience, best measured using #link("https://en.wikipedia.org/wiki/Omega_ratio")[Omega].
