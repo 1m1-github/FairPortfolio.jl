@@ -12,11 +12,11 @@ This should also allow users to `add` the pkg in a julia runtime.
 ## <p align="center">Usage</p>
 
 Choose n assets which you believe are going to increase in value over the long term.
-For each asset, have a `price` vector. The `price` vectors for each asset should have equal `length`. The prices are denominated in a common ccy.
+For each asset, have a `prices` vector. The `prices` vectors for each asset should have equal `length`. The prices are denominated in a common ccy.
 
 ```
 using FairPortfolio
-optimize(price_asset_1, price_asset_2, price_asset_3, ...)
+optimize(prices_asset_1, prices_asset_2, prices_asset_3, ...)
 ```
 
 The standard output displays the optimal weights your portfolio should use per asset.
