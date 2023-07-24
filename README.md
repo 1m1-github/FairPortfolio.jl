@@ -11,6 +11,10 @@ This should also allow users to `add` the pkg in a julia runtime.
 <br></br>
 ## <p align="center">Usage</p>
 
+The main innovation is in the `optimize(C::Matrix)` method that takes a covariance matrix with a constant diagonal.
+
+For convenience, the following method based on prices is also provided.
+
 Choose n assets which you believe are going to increase in value over the long term.
 For each asset, have a `prices` vector. The `prices` vectors for each asset should have equal `length`. The prices are denominated in a common ccy.
 
