@@ -139,11 +139,11 @@ $ hat(w) = mat(w_1; dots.v; w_(n-1)) $
 
 $ hat(b) = mat(sigma-sigma_(1n); dots.v; sigma-sigma_(n-1,n)) $
 
-and $hat(S)$ the matrix containing $s_(i k)$ with $i eq.not k$
+and $hat(S)$ the matrix containing $hat(s)_(i k)$ with $i eq.not k$
 \
-$ s_(i k) = sigma-sigma_(i n)-sigma_(k n)+sigma_(k i) = s_(k i) $
+$ hat(s)_(i k) = sigma-sigma_(i n)-sigma_(k n)+sigma_(k i) = hat(s)_(k i) $
 
-$ s_(i i) = 2(sigma - sigma_(i n)) $
+$ hat(s)_(i i) = 2(sigma - sigma_(i n)) $
 \
 Now we are left with solving a linear equation system
 \ \
