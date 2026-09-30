@@ -48,4 +48,4 @@ shares based on both risks and prices: 2.721552378761487e-6,4.513655979086473e-5
 >The above output is from the `example/crypto.jl` and tells us to hold approx 0.0000027 BTC, 0.000045 ETH, 0.85 DOGE in our portfolio to minimize our risk and have 10% annualized standard deviation (volatility) per 1 USD investment, given current data.
 
 ## <p align="center">Presented @ MIT 2023</p>
-![Poster presentation](imi MIT FairPortfolio JuliaCon.png)
+![Poster presentation](mit.png)
